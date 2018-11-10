@@ -8,6 +8,10 @@ function ask(i){
     process.stdout.write(`Enter ${quer[i]}`);
 }
 
+function add(a, b){
+    return a + b;
+}
+
 //Listener to handle stdin
 process.stdin.on('data',function(data) {
     nums.push(parseInt(data.toString().trim(), 10));
@@ -16,7 +20,7 @@ process.stdin.on('data',function(data) {
     } else {
         //calculate and print the calculated value
         if (!isNaN(nums[0]) && !isNaN(nums[1])){
-            res = nums[0] + nums[1];
+            res = add(nums[0], nums[1]);
             console.log('Added value: ' + res);
             process.exit();
         }
